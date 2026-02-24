@@ -1,0 +1,15 @@
+---
+services:
+  duckdns:
+    image: ghcr.io/linuxserver/duckdns
+    container_name: DuckDNS
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - SUBDOMAINS=ha-amartinper
+      - TOKEN=9265f509-af2a-4b63-91bd-42f355fd1d81
+      - LOG_FILE=true
+    volumes:
+      - /mnt/240SSD/duckdns:/config
+    restart: always
